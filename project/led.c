@@ -54,6 +54,34 @@ void dim() {
   _BIS_SR(LPM0_bits + GIE);
 }
 
+void led_count() {
+  static char leds = 0;
+  switch (leds) {
+  case 0:
+    red_on = 0;
+    green_on = 0;
+    leds = 1;
+    break;
+  case 1:
+    red_on = 1;
+    green_on = 0;
+    leds = 2;
+    break;
+  case 2:
+    red_on = 0;
+    green_on = 1;
+    leds = 3;
+    break;
+  case 3:
+    red_on = 1;
+    green_on = 1;
+    leds = 0;
+    break;
+  }
+  led_update();
+  return 1;
+}
+
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void Timer1_A0(void) {
   while (1) {
@@ -62,4 +90,5 @@ __interrupt void Timer1_A0(void) {
       IncDec_PWM = -IncDec_PWM;
   }
 }
+
 

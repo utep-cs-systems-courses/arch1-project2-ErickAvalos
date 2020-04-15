@@ -13,5 +13,6 @@ extern unsigned char led_dim;
 void led_init();
 void led_update();
 void dim();
+void led_count();
 
 #endif // included

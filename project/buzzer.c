@@ -25,10 +25,10 @@ void buzzer_init()
 void buzzer_set_period(short cycles) /* buzzer clock = 2MHz.  (period of 1k results in 2kHz tone) */
 {
   TA0CCR0 = cycles; 
-  TA0CCR1 = cycles >> 1;		/* one half cycle */
+  TA0CCR1 = cycles >> 5;		/* one half cycle */
 }
 
-void tones() {
+void song() {
   buzzer_set_period(_A);
   length();
   buzzer_set_period(_C);
@@ -38,7 +38,7 @@ void tones() {
 }
 
 void length() {
-  __delay_cycles(16000000/2);
+  __delay_cycles(16000000/1);
 }
     
     

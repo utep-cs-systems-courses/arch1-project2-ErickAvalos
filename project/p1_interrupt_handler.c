@@ -13,3 +13,7 @@ __interrupt_vec(PORT2_VECTOR) Port_2(){
   }
 }
 
+void __interrupt_vec(WDT_VECTOR) WDT() {
+  stateMachine();
+}
+
