@@ -7,7 +7,7 @@
 #define SW4 BIT3
 #define SWITCHES (SW1 | SW2 | SW3 | SW4) //all 4 switches
 
-void switch_update_interrupt_sense();
+static char switch_update_interrupt_sense();
 void switch_init();
 void switch_interrupt_handler();
 
