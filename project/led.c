@@ -78,8 +78,6 @@ void led_count() {
     leds = 0;
     break;
   }
-  led_update();
-  return 1;
 }
 
 #pragma vector=TIMER1_A0_VECTOR
